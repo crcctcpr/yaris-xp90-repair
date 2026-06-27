@@ -52,6 +52,16 @@ Pure Markdown, no tooling required — browse it on GitHub or locally.
 
 ## Part 2 — OBD2 diagnostics toolkit (`diag/`)
 
+The toolkit includes a browser dashboard (`./yaris-diag web`) — live gauges,
+fuel-trim / MAF charts, DTC alerts, replay, and a dyno power-curve view. Below
+it is running against the bundled [`examples/sample_drive.csv`](diag/examples/sample_drive.csv),
+so you can see it with no car attached:
+
+![Yaris web dashboard running on the sample drive log — live gauges and fuel-trim / MAF charts](docs/img/webdash.png)
+
+> The sample log is a real cold-start idle pull showing the chronic **P0171 /
+> MAF** lean condition (LTFT pinned at +25 %) that this project was built to chase.
+
 ### Hardware
 - A Bluetooth **ELM327** adapter (the ~$10 clones work; PIN is usually 1234/0000).
 - A Linux host with BlueZ. Developed on a built-in/USB Bluetooth controller.
