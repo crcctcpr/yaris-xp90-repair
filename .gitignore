@@ -1,0 +1,27 @@
+# Runtime output
+diag/reports/
+reports/
+*.db
+*.csv.bak
+
+# Keep the bundled example data
+!diag/examples/*.csv
+
+# Local vehicle profiles may contain your VIN / adapter MAC
+diag/yaris/vehicles/*.toml
+!diag/yaris/vehicles/_template.toml
+!diag/yaris/vehicles/JTDEXAMPLE0000000.toml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# OS / editor
+.DS_Store
+*.swp
+
+# keep the reports dir present (contents ignored)
+!diag/reports/.gitkeep

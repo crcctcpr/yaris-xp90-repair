@@ -1,0 +1,39 @@
+# Template — copy to <VIN>.toml and fill in for a new vehicle.
+# yaris-diag --vehicle <VIN> will load this profile.
+
+[identity]
+vin = ""                          # 17-char VIN
+model_year = 0
+platform = ""
+engine = ""
+engine_displacement_l = 0.0
+trans_candidates = []
+
+[adapter]
+mac = ""                          # ELM327 BT MAC (colons)
+pin = "1234"
+spp_channel = 1                   # 1 or 2 — check with `sdptool search --bdaddr ... SP`
+default_port = "/dev/rfcomm0"
+default_baud = 38400
+
+[protocol]
+elm_protocol_number = 6           # 6 = ISO 15765-4 CAN 11b 500k
+ecm_request_id = "7E0"
+ecm_response_id = "7E8"
+functional_broadcast = "7DF"
+
+[expected]
+idle_rpm = [650, 850]
+coolant_warm_c = [85, 100]
+iat_c = [5, 70]
+batt_v_engine_off = [12.0, 12.8]
+batt_v_engine_running = [13.2, 14.7]
+stft_pct = [-7.0, 7.0]
+ltft_pct = [-7.0, 7.0]
+maf_idle_gs = [1.5, 5.0]          # Tune for your engine displacement
+lambda_value = [0.97, 1.03]
+timing_adv_idle = [3.0, 18.0]
+cat_temp_c = [400, 800]
+
+[physics]
+air_density_g_l = 1.20

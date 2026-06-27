@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+"""Launcher shim — runs the yaris.cli module without needing install."""
+import os, sys
+here = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, here)
+from yaris.cli import main
+sys.exit(main() or 0)

@@ -1,0 +1,12 @@
+# Core dependency — ELM327 serial I/O over the rfcomm device.
+pyserial>=3.5
+
+# Optional: PNG plot exports (yaris-diag plot / web charts).
+# The toolkit auto-falls back to text if matplotlib is absent.
+# matplotlib>=3.5
+
+# Optional: only needed for bt_pair_agent.py (Bluetooth pairing helper).
+# On Debian/Ubuntu these are best installed as system packages:
+#   sudo apt install python3-dbus python3-gi
+# dbus-python>=1.2
+# PyGObject>=3.40
